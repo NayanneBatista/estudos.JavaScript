@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de idade</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+    <header>
+        <h1>Verificador de idade</h1>
+    </header>
+
+    <section>
+        <fieldset>
+            <legend>Ano de Nascimento:</legend>
+            <input id="anoNasc" type="number" min="1900" max="2020"/>
+        </fieldset>   
+
+        <fieldset>
+            <legend>Sexo:</legend>
+            <input type="radio" name="tSexo" id="cMasc" checked/> <label for="cMasc">Masculino</label><br/>
+            <input type="radio" name="tSexo" id="cFem"/> <label for="cFem">Feminino</label>
+        </fieldset>
+        
+        <div id="verificar"><input type="button"  value="Verificar" size="8" onclick="calcularIdade()"/>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; CursoemVídeo</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudança de hora</title>
+    <style>
+        body {
+            background-color: rgb(14, 12, 12);
+            font-family: sans-serif;
+            font-size: 20pt;
+            color: rgba(255, 255, 255, 1);
+            font-weight: bold;
+        }
+
+        div#manhã {
+            background-color: rgb(38, 83, 218);
+            text-align: center;
+            width: 400px;
+            height: 500px;
+            margin: auto;
+            padding-top: 100px;
+        }
+
+        div#tarde {
+            background-color: rgb(221, 163, 36);
+            text-align: center;
+            width: 400px;
+            height: 500px;
+            margin: auto;
+            padding-top: 100px;
+        }
+
+        div#noite {
+            background-color: rgb(3, 8, 24);
+            text-align: center;
+            width: 400px;
+            height: 500px;
+            margin: auto;
+            padding-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="horaAtual"></div>
+    <div id="manha" style="display: none;">Bom dia!</div>
+    <div id="tarde" style="display: none;">Boa tarde!</div>
+    <div id="noite" style="display: none;">Boa noite!</div>
+
+    <script>
+
+            var now = new Date
+            var h = now.getHours()
+            var m = now.getMinutes()
+            var horaAtual = (h + ":" + m)
+
+        function passaTempo() {
+
+            var divManha = document.getElementById("manha")
+            var divTarde = document.getElementById("tarde")
+            var divNoite = document.getElementById("noite")
+
+            if (h > 0 && h < 12)
+                divManha.style.display = "block"
+            else {
+                if (h >= 12 && h <= 18)
+                    divTarde.style.display = "block"
+                else
+                    divNoite.style.display = "block"
+            }
+        }
+        document.getElementById("horaAtual").innerHTML="Hora atual: " + horaAtual
+        passaTempo()
+    </script>
+</body>
+</html>
